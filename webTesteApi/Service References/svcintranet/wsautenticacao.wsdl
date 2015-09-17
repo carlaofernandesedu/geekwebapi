@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://drhunet.edunet.sp.gov.br/Servicos/Autenticacao" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://drhunet.edunet.sp.gov.br/Servicos/Autenticacao" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://drhunet.edunet.sp.gov.br/Servicos/Autenticacao">
+      <s:element name="ObterChavePublica">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObterChavePublicaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObterChavePublicaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterPermissoesUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mensagem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterPermissoesUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObterPermissoesUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ObterChavePublicaSoapIn">
+    <wsdl:part name="parameters" element="tns:ObterChavePublica" />
+  </wsdl:message>
+  <wsdl:message name="ObterChavePublicaSoapOut">
+    <wsdl:part name="parameters" element="tns:ObterChavePublicaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObterPermissoesUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ObterPermissoesUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ObterPermissoesUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ObterPermissoesUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsAutenticacaoSoap">
+    <wsdl:operation name="ObterChavePublica">
+      <wsdl:input message="tns:ObterChavePublicaSoapIn" />
+      <wsdl:output message="tns:ObterChavePublicaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterPermissoesUsuario">
+      <wsdl:input message="tns:ObterPermissoesUsuarioSoapIn" />
+      <wsdl:output message="tns:ObterPermissoesUsuarioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsAutenticacaoSoap" type="tns:wsAutenticacaoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObterChavePublica">
+      <soap:operation soapAction="http://drhunet.edunet.sp.gov.br/Servicos/Autenticacao/ObterChavePublica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterPermissoesUsuario">
+      <soap:operation soapAction="http://drhunet.edunet.sp.gov.br/Servicos/Autenticacao/ObterPermissoesUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsAutenticacaoSoap12" type="tns:wsAutenticacaoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObterChavePublica">
+      <soap12:operation soapAction="http://drhunet.edunet.sp.gov.br/Servicos/Autenticacao/ObterChavePublica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterPermissoesUsuario">
+      <soap12:operation soapAction="http://drhunet.edunet.sp.gov.br/Servicos/Autenticacao/ObterPermissoesUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsAutenticacao">
+    <wsdl:port name="wsAutenticacaoSoap" binding="tns:wsAutenticacaoSoap">
+      <soap:address location="http://localhost/pneteduc/ws/wsautenticacao/wsautenticacao.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsAutenticacaoSoap12" binding="tns:wsAutenticacaoSoap12">
+      <soap12:address location="http://localhost/pneteduc/ws/wsautenticacao/wsautenticacao.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

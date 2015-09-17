@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://localhost/pneteduc/ws/wsautenticacao/wsautenticacao.asmx?wsdl" docRef="http://localhost/pneteduc/ws/wsautenticacao/wsautenticacao.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://localhost/pneteduc/ws/wsautenticacao/wsautenticacao.asmx" xmlns:q1="http://drhunet.edunet.sp.gov.br/Servicos/Autenticacao" binding="q1:wsAutenticacaoSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://localhost/pneteduc/ws/wsautenticacao/wsautenticacao.asmx" xmlns:q2="http://drhunet.edunet.sp.gov.br/Servicos/Autenticacao" binding="q2:wsAutenticacaoSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
