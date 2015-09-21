@@ -67,13 +67,13 @@
     <Content Include="Service References\svcintranet\webTesteApi.svcintranet.ObterPermissoesUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\svcintranet\wsautenticacao.disco" />
-    <Content Include="Service References\svcintranet\configuration91.svcinfo" />
-    <Content Include="Service References\svcintranet\configuration.svcinfo" />
-    <Content Include="Service References\svcintranet\Reference.svcmap">
+    <None Include="Service References\svcintranet\wsautenticacao.disco" />
+    <None Include="Service References\svcintranet\configuration91.svcinfo" />
+    <None Include="Service References\svcintranet\configuration.svcinfo" />
+    <None Include="Service References\svcintranet\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="validawsintranet.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -109,7 +109,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Service References\svcintranet\wsautenticacao.wsdl" />
+    <None Include="Service References\svcintranet\wsautenticacao.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
